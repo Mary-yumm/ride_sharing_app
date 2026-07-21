@@ -1,16 +1,53 @@
-# ride_sharing_app
+# Ride Sharing App
 
-A new Flutter project.
+A cross-platform Flutter ride-sharing application using Firebase, Google Maps, geolocation, and push notifications. The app includes a mobile client (Android), web support, and a small Cloud Functions backend under `functions/`.
 
-## Getting Started
+**Features**
+- Real-time location and matching (Geofire/Geolocation)
+- Google Maps integration and Places lookup
+- Firebase Authentication, Realtime Database / Firestore, and Cloud Messaging
+- Background location and notifications
+- Example serverless logic in [functions/index.js](functions/index.js)
 
-This project is a starting point for a Flutter application.
+**Prerequisites**
+- Flutter SDK (stable)
+- Android SDK (for Android builds) and/or Xcode (for iOS builds)
+- Node.js + npm (for `functions/`)
+- Firebase CLI (optional for deploying functions)
 
-A few resources to get you started if this is your first Flutter project:
+**Quick Start**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repo and install Dart/Flutter dependencies:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone <repository-url>
+cd ride_sharing_app
+flutter pub get
+```
+
+2. Configure Firebase (create a Firebase project and add Android/iOS/web apps). Place platform config files as directed by Firebase docs (`google-services.json` for Android, `GoogleService-Info.plist` for iOS).
+
+3. Run the app locally:
+
+```bash
+# debug on a connected device or emulator
+flutter run
+
+# build for Android
+flutter build apk
+
+# build for web
+flutter build web
+```
+
+5. (Optional) Run Cloud Functions locally:
+
+```bash
+cd functions
+npm install
+firebase emulators:start --only functions
+```
+
+
+
+---
